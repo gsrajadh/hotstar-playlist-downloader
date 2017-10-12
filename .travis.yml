@@ -7,7 +7,11 @@ python:
 
 install :
   - pip install -r requirements.txt
+  - nvm install stable
+  - nvm use stable
+  - npm install -g eclint
 
 script :
   - ./hotstar-playlist-downloader/hotstar-playlist-downloader.py http://www.hotstar.com/tv/mahabharat/435/seasons/season-1
   - coala --ci
+  - eclint check **/*.py
